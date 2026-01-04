@@ -1,0 +1,8 @@
+
+{
+  "name": "Military Baby: Task Force",
+  "description": "The ultimate gamified chore trainer for Junior Commanders. Transform boring tasks into epic battles with playful child voices and dynamic combat animations.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

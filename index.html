@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MILITARY BABY | CHORE SQUAD</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Carter+One&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-purple: #4c1d95;
+      --accent-yellow: #FFD700;
+      --accent-lime: #7FFF00;
+      --accent-pink: #FF1493;
+      --hard-black: #000000;
+      --sticker-white: #FFFFFF;
+    }
+
+    body {
+      background-color: var(--primary-purple);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.1) 20%, transparent 20%);
+      background-size: 60px 60px;
+      animation: move-bg 20s linear infinite;
+      color: #FFFFFF;
+      font-family: 'Carter One', cursive;
+      overflow-x: hidden;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    @keyframes move-bg {
+      from { background-position: 0 0; }
+      to { background-position: 60px 60px; }
+    }
+
+    .titan { font-family: 'Titan One', cursive; }
+    .carter { font-family: 'Carter One', cursive; }
+    .fredoka { font-family: 'Fredoka', sans-serif; }
+
+    .sticker-card {
+      background: #581c87;
+      border: 8px solid white;
+      box-shadow: 12px 12px 0px var(--hard-black);
+      border-radius: 40px;
+      transition: transform 0.2s ease;
+    }
+
+    .cartoon-header {
+      color: var(--accent-yellow);
+      -webkit-text-stroke: 3px var(--hard-black);
+      text-shadow: 6px 6px 0px var(--hard-black);
+      letter-spacing: 2px;
+      line-height: 1.1;
+    }
+
+    .btn-squishy {
+      background: var(--accent-yellow);
+      color: var(--hard-black);
+      border: 6px solid var(--hard-black);
+      box-shadow: 0px 10px 0px var(--hard-black);
+      border-radius: 25px;
+      font-family: 'Titan One', cursive;
+      transition: all 0.1s ease;
+      cursor: pointer;
+    }
+
+    .btn-squishy:active {
+      transform: translateY(8px);
+      box-shadow: 0px 2px 0px var(--hard-black);
+    }
+
+    .btn-squishy-pink {
+      background: var(--accent-pink);
+      color: white;
+    }
+
+    .tv-screen {
+      background: #000;
+      border: 8px solid #3b0764;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Enhanced Scanline & Static Effect */
+    .tv-screen::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
+      z-index: 10;
+      background-size: 100% 4px;
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    .tv-screen::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(18, 16, 16, 0.1);
+      opacity: 0;
+      z-index: 11;
+      pointer-events: none;
+      animation: flicker 0.15s infinite;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.1; }
+      5% { opacity: 0.2; }
+      10% { opacity: 0.1; }
+      15% { opacity: 0.3; }
+      20% { opacity: 0.2; }
+      25% { opacity: 0.1; }
+      30% { opacity: 0.2; }
+      35% { opacity: 0.1; }
+      40% { opacity: 0.3; }
+      45% { opacity: 0.2; }
+      50% { opacity: 0.1; }
+      55% { opacity: 0.2; }
+      60% { opacity: 0.1; }
+      65% { opacity: 0.3; }
+      70% { opacity: 0.2; }
+      75% { opacity: 0.1; }
+      80% { opacity: 0.2; }
+      85% { opacity: 0.1; }
+      90% { opacity: 0.3; }
+      95% { opacity: 0.2; }
+      100% { opacity: 0.1; }
+    }
+
+    @keyframes bounceInUp {
+      from, 60%, 75%, 90%, to { animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+      from { opacity: 0; transform: translate3d(0, 3000px, 0) scaleY(5); }
+      60% { opacity: 1; transform: translate3d(0, -20px, 0) scaleY(0.9); }
+      75% { transform: translate3d(0, 10px, 0) scaleY(0.95); }
+      90% { transform: translate3d(0, -5px, 0) scaleY(0.98); }
+      to { transform: translate3d(0, 0, 0); }
+    }
+
+    .animate-bounce-up {
+      animation: bounceInUp 0.8s both;
+    }
+
+    .cartoon-input {
+      background: white;
+      color: var(--hard-black);
+      border: 6px solid var(--hard-black);
+      border-radius: 25px;
+      padding: 20px 30px;
+      font-family: 'Titan One', cursive;
+      font-size: 1.8rem;
+      box-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+    }
+
+    .cartoon-input:focus {
+      outline: none;
+      border-color: var(--accent-pink);
+    }
+
+    ::selection { background: var(--accent-yellow); color: var(--hard-black); }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@^19.2.3",
+      "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+      "react/": "https://esm.sh/react@^19.2.3/",
+      "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+    }
+  }
+  </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
