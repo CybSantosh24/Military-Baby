@@ -37,7 +37,7 @@ We built this war machine using modern web technologies:
 | **Language** | ![TypeScript](https://img.shields.io/badge/-TypeScript-black?logo=typescript) | Type-Safety & Logic |
 | **Build Tool** | ![Vite](https://img.shields.io/badge/-Vite-black?logo=vite) | Lightning Fast Dev Server |
 | **The Brain** | ![Gemini](https://img.shields.io/badge/-Google_Gemini-black?logo=google) | Text Generation & Audio Synthesis |
-| **Styling** | **Custom CSS** | Cyberpunk/Neon Aesthetic |
+| **Styling** | **Custom CSS** | Kids Theme |
 
 ---
 
